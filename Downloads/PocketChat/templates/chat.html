@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Chat - Lightweight Chat{% endblock %}
+
+{% block content %}
+<div class="chat-header">
+    <h1>Chat</h1>
+    <div class="actions">
+        <a href="{{ url_for('clear_chat') }}" class="btn-small">Clear</a>
+        <a href="{{ url_for('index') }}" class="btn-small">Home</a>
+    </div>
+</div>
+
+<div class="conversation">
+    {% if conversation %}
+        {% for message in conversation %}
+            <div class="message {{ 'user' if message.is_user else 'ai' }}">
+                <strong>{{ 'You' if message.is_user else 'AI' }}:</strong>
+                <span>{{ message.content }}</span>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="welcome-msg">
+            <p>Welcome! Type a message below to start chatting.</p>
+        </div>
+    {% endif %}
+</div>
+
+<div class="chat-form">
+    <form method="POST" action="{{ url_for('chat') }}">
+        <div class="input-group">
+            <input type="text" name="message" maxlength="500" placeholder="Type your message..." required autofocus>
+            <button type="submit">Send</button>
+        </div>
+    </form>
+</div>
+
+<div class="status">
+    <p><small>Messages are limited to 500 characters. Conversation history is automatically managed.</small></p>
+</div>
+{% endblock %}

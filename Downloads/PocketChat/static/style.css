@@ -1,0 +1,236 @@
+/* Ultra-lightweight CSS for feature phones - Total size under 5KB */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+    background: #fff;
+}
+
+/* Container and layout */
+.container {
+    max-width: 100%;
+    padding: 8px;
+    margin: 0 auto;
+}
+
+/* Typography */
+h1 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 16px;
+    margin: 12px 0 8px 0;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+ul {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+/* Buttons */
+.btn, .btn-small {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #007cba;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #005a87;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-small {
+    padding: 4px 8px;
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.btn:hover, .btn-small:hover,
+.btn:focus, .btn-small:focus {
+    background: #005a87;
+}
+
+/* Alerts */
+.alert {
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+}
+
+.alert-error {
+    background: #ffe6e6;
+    border-color: #ff9999;
+    color: #cc0000;
+}
+
+.alert-info {
+    background: #e6f3ff;
+    border-color: #99ccff;
+    color: #0066cc;
+}
+
+/* Welcome page */
+.welcome {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.actions {
+    margin: 16px 0;
+}
+
+.info {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #ddd;
+}
+
+/* Chat interface */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.conversation {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    background: #fafafa;
+}
+
+.message {
+    margin-bottom: 12px;
+    padding: 6px;
+    border-radius: 4px;
+    word-wrap: break-word;
+}
+
+.message.user {
+    background: #e6f3ff;
+    border-left: 3px solid #007cba;
+}
+
+.message.ai {
+    background: #f0f0f0;
+    border-left: 3px solid #666;
+}
+
+.message strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.welcome-msg {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Chat form */
+.chat-form {
+    margin-bottom: 12px;
+}
+
+.input-group {
+    display: flex;
+    gap: 4px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.input-group button {
+    padding: 8px 16px;
+    background: #007cba;
+    color: #fff;
+    border: 1px solid #005a87;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.input-group button:hover,
+.input-group button:focus {
+    background: #005a87;
+}
+
+/* Status and info */
+.status {
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+}
+
+/* Small screen optimizations */
+@media screen and (max-width: 240px) {
+    body {
+        font-size: 12px;
+    }
+    
+    .container {
+        padding: 4px;
+    }
+    
+    h1 {
+        font-size: 16px;
+    }
+    
+    .conversation {
+        max-height: 300px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-group button {
+        margin-top: 4px;
+    }
+}
+
+/* Opera Mini specific optimizations */
+@media screen and (max-device-width: 320px) {
+    .conversation {
+        max-height: 250px;
+    }
+    
+    .message {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Lightweight Chat{% endblock %}
+
+{% block content %}
+<div class="welcome">
+    <h1>Chat</h1>
+    <p>Ultra-lightweight chatbot optimized for feature phones</p>
+    <div class="actions">
+        <a href="{{ url_for('chat') }}" class="btn">Start Chat</a>
+    </div>
+</div>
+
+<div class="info">
+    <h2>About</h2>
+    <p>This chatbot is designed to work on feature phones with limited memory and slow network connections.</p>
+    <ul>
+        <li>Text-only interface</li>
+        <li>Works on 2G networks</li>
+        <li>Minimal data usage</li>
+        <li>Compatible with Opera Mini 4.4</li>
+    </ul>
+</div>
+{% endblock %}
